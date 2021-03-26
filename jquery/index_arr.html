@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Array js</title>
+</head>
+<body>
+  <script>
+    var arr = [];
+    arr[0] = "a";
+    arr[1] = "b";
+    arr[2] = "c";
+    arr[3] = "d";
+
+    // var size = arr.length;
+    // console.log(size);
+
+    // //them phan tu vao cuoi mang push()
+    // arr.push("ef")
+    // console.log(arr.length);
+
+    // // them mot hoac nhieu phan tu vao dau mang
+    // arr.unshift("gh")
+    // console.log(arr.length);
+
+    // // Xoa phan tu cuoi mang
+    // arr.pop()
+    // console.log(arr.length);
+    // // Xoa phan ru dau tien trong mang
+    // arr.shift()
+    // console.log(arr.length);
+
+    // // duyet mang
+    // // bằng for
+    // for(var i = 0; i < arr.length; i++) {
+    //    console.log(arr[i]);   
+    // }
+
+    // Bằng foreach
+    // arr.forEach(function(item) {
+    //   console.log(item)
+    // });
+
+    // //dùng map
+    //   arr.map(function(value, key){
+    //   console.log(value)
+    //   // console.log(key)
+    // })
+
+    // Object
+    // Khởi tạo đối tượng
+    // var obj  = new Object()
+    var obj = {}
+      obj['email'] = "xxxxx";
+      obj.pass = 1234;
+      obj.demo = arr;
+
+
+    var objCon = {
+      'test1': 111,
+      'test2': 222
+    }
+
+      obj['demo2'] = objCon
+
+     // array key tu dong tao ra, bat dau = 0 va tang len,
+    //  object key duoc tu dinh nghia
+    Object.keys(obj).map(function(key,index){
+      console.log(obj[key])
+    })
+
+
+    // localStorage
+
+    
+    // console.log(obj)
+
+    // var name, age, address, email;
+    // var person = new Object();
+    // function person(){}
+    // function person(name, age, address, email){
+    //   this.name = name;
+    //   this.age = age;
+    //   this.address = address;
+    //   this.email = email;
+    // }
+
+    // var p = new person("Tc",25,"dai loc","abc@gmail");
+
+    // console.log(p.name)
+    // console.log(p.age)
+    // console.log(p.address)
+    // console.log(p.email)
+
+    // localStrorage
+    var persons = new Array
+    var new_ps = {
+      "id":"1",
+      "name":"thanhcang",
+      "address":"Đại Lộc"
+    };
+
+    var new_ps1 = {
+      "id":"2",
+      "name":"Nguyễn Văn A",
+      "address":"Đà Nẵng"
+    };
+
+    $(document).ready(function(){
+      $("button.add").click(function(){
+        persons.push(new_ps)
+        persons.push(new_ps1)
+
+        localStorage.persons_obj = JSON.stringify(persons)
+      })
+    })
+    
+
+    // localStorage.setItem('name',"thanhcang")
+    // localStorage.arr = arr
+    // localStorage['object'] = JSON.stringify(obj)
+  </script>
+
+  <button class="add">Add item</button>
+  <a href="demo.html" target="_blank">Demo</a>
+</body>
+</html>

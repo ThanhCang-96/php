@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>jquery</title>
+
+  <style type="text/css">
+    .demo{
+      background-color: red;
+    }
+
+    .demo1{
+      background-color: blue;
+    }
+    ul li {
+      color: black;
+    }
+   ul li ul {
+     display: none;
+     background-color: green;
+   }
+
+   #attr{
+     background-color: chocolate;
+   }
+
+   #click-attr{
+     background-color: red;
+   }
+  </style>
+
+  <script>
+    var n = 0;
+
+    function isShow(tt) {
+      if (tt % 2 == 0) {
+        return true
+      }
+    }
+    $(document).ready(function(){
+      
+      // kiem tra co class "demo"
+      $("input.add").click(function(){
+        if ($("p").hasClass("demo")) {
+          $("p").removeClass("demo")
+        }
+        else
+        $("p").addClass("demo1")
+      })
+
+      // xoá class demo
+      $("input.remove").click(function(){
+        $("p").removeClass("demo")
+      })
+
+      // show
+      $("input.show").click(function(){
+        $("p").show()
+      })
+
+      // hide
+      $("input.hiden").click(function(){
+        $("p").hide();  
+      })
+
+      // button hide/show
+      $("input.hideshow").click(function(){
+        n++;
+        if (n%2==0) {
+          $("p").show()
+        }
+        else
+          $("p").hide()
+      })
+
+      // tìm kiếm phần tử con
+      $("ul").find(".a").css("background-color","blue")
+
+      // click hide/show thẻ li
+      $("li").click(function(){
+        if($(this).find("ul").is(":hidden")){
+          $(this).find("ul").show()
+        }
+        else{
+        $(this).find("ul").hide()
+        }
+      })
+
+      // attr() 
+        // - thiet lap 1 hoắc nhieu thuoc tinh cho phan tu 
+            // + attr("attribute","value")
+            // + attr(attribute:value,attribute:value,attribute:value,...)
+        // -Lấy giá trị thuộc tính của một phần tử nào đó:
+            // + attr("attribute")
+
+      $("p").click(function(){
+        var getClass = $(this).attr("id")
+        console.log(getClass)
+
+        $(this).attr("id","click-attr")
+      })
+
+      $("a").click(function(){
+        var img1 = $("img#img-1").attr("src")
+        $("img#img-2").attr("src",img1)
+        var getSrc2 = $("img#img-2").attr("src")
+        console.log(getSrc2)
+      })
+    });
+  </script>
+</head>
+<body>
+  <p>Hello world!</p>
+  <input class="hideshow" type="button" value="HIDE/SHOW">
+
+  <!-- <input class="remove" type="button" value="remove">
+  <input class="show" type="button" value="show">
+  <input class="hiden" type="button" value="hiden"> -->
+
+  <ul>
+    <li>tin tuc1
+      <ul>
+        <li class="a">aaaaaaaaaa</li>
+        <li class="b">bbbbbbbbbb</li>
+        <li class="c">ccccccccccc</li>
+        <li class="d">ddddddddddd</li>
+        <li class="e">eeeeeeeeeee</li>
+      </ul>
+    </li>
+    <li>tin tuc2
+      <ul>
+        <li class="a">aaaaaaaaaa</li>
+        <li class="b">bbbbbbbbbb</li>
+        <li class="c">ccccccccccc</li>
+        <li class="d">ddddddddddd</li>
+        <li class="e">eeeeeeeeeee</li>
+      </ul>
+    </li>
+    <li>tin tuc3
+      <ul>
+        <li class="a">aaaaaaaaaa</li>
+        <li class="b">bbbbbbbbbb</li>
+        <li class="c">ccccccccccc</li>
+        <li class="d">ddddddddddd</li>
+        <li class="e">eeeeeeeeeee</li>
+      </ul>
+    </li>
+  </ul>
+
+  <!-- .attr() -->
+  <p id="attr">thuộc tính .attr()</p>
+  <a href="#">CLICK</a>
+  <img src="../image/r-1.png" id="img-1">
+  <img src="../image/r-2.jpg" id="img-2">
+</body>
+</html>

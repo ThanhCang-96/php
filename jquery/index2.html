@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Get value from form</title>
+</head>
+<body>
+
+  <!-- jquery -->
+  <!-- form 1 -->
+  <script>
+    $(document).ready(function(){
+
+      // $("button").click(function(){
+      //   var getU = $("input.user").val()
+      //   var getP = $("input.pass").val()
+
+      //   if (getU == "") {
+      //     $("p.u_err").text("Vui long nhap email")
+      //   }else{
+      //     $("p.u_err").text("")
+      //   }
+
+      //   if (getP == "") {
+      //     $("p.p_err").text("Vui long nhap password")
+      //   }else{
+      //     $("p.p_err").text("")
+      //   }
+
+      //   if (getU != "" && getP != "") {
+      //     return true
+      //   }
+
+      //   return false;
+      // })
+
+      // form 2
+      $("form").submit(function(){
+        var getName = $("input.name").val()
+        var getEmail = $("input.email").val()
+        var getPhone = $("input.phone").val()
+        var getAddress = $("input.address").val()
+        var getSub = $("input.sub").val()
+        var getContent = $("input.content").val()
+
+        var demo = 1;
+        $("p.name_err").text("");
+        $("p.email_err").text("")
+        $("p.phone_err").text("");
+        $("p.add_err").text("")
+        $("p.sub_err").text("");
+        $("p.content_err").text("")
+
+        if (getName == "") {
+          $("p.name_err").text("Vui lòng nhập thông tin")
+          demo = 0;
+        }
+
+        if (getEmail == "") {
+          $("p.email_err").text("Vui lòng nhập thông tin")
+          demo = 0;
+        }
+
+        if (getPhone == "") {
+          $("p.phone_err").text("Vui lòng nhập thông tin")
+          demo = 0;
+        }
+
+        if (getAddress == "") {
+          $("p.add_err").text("Vui lòng nhập thông tin")
+          demo = 0;
+        }
+
+        if (getSub == "") {
+          $("p.sub_err").text("Vui lòng nhập thông tin")
+          demo = 0;
+        }
+
+        if (getContent == "") {
+          $("p.content_err").text("Vui lòng nhập thông tin")
+          demo = 0;
+        }
+
+        if (demo == 1){
+          return true;
+        }
+        return false;
+      })
+
+      $("buuton.cancle").click(function(){
+        var arr = [];
+        $.each($("input[name='answer']:checked"),function(){
+          arr.push($(this).val())
+        })
+        alert("aaaa: "+arr.join(","))
+      })
+
+      $("input[type='radio']").click(function(){
+        var radio = $("input[name='gender']:checked").val()
+        $("p.gt").text(radio)
+      })
+
+      $("select").change(function(){
+        var value = $("#answer").val()
+        $("p.select").text(value)
+      })
+    })
+  </script>
+
+  <!-- HTML -->
+  <!-- <form action="https://www.google.com.vn/?hl=vi">
+    Username: <input type="text" class="user">
+    <p class="u_err"></p>
+    Password: <input type="text" class="pass">
+    <p class="p_err"></p>
+    <button type="submit">Click</button>
+  </form> -->
+
+  <div class="bt_form">
+    <span>GÓP Ý-LIÊN HỆ 24H</span>
+    <form action="https://www.google.com.vn/?hl=vi">
+
+      <label class="label"> Họ và tên:</label>
+      <input type="text" class="name">
+      <p class="name_err"></p>
+
+      <label class="label"> Địa chỉ email:</label>
+      <input type="text" class="email">
+      <p class="email_err"></p>
+
+      <label class="label"> Số điện thoại:</label>
+      <input type="text" class="phone">
+      <p class="phone_err"></p>
+
+      <label class=label> Địa chỉ nơi cư trú:</label>
+      <input type="text" class="address">
+      <p class="add_err"></p>
+
+      <label class="label"> Tiêu đề:</label>
+      <input type="text" class="sub" value="GÓP Ý 24H">
+      <p class="sub_err"></p>
+
+      <label class="label"> Nội dung:</label>
+      <textarea class="content" cols="30" rows="10"></textarea>
+      <p class="content_err"></p>
+
+      <p>Giới tính</p>
+      <input style="display: inline;" type="radio" name="gender" id="gender" value="male">
+      <label for="male">Nam</label>
+      <input style="display: inline;" type="radio" name="gender" id="gender" value="female">
+      <label for="male">Nữ</label>
+      <input style="display: inline;" type="radio" name="gender" id="gender" value="other">
+      <label for="male">Giói tính khác</label><br><br>
+      <p class="gt" style="background-color: blue;"></p>
+
+      <p>Chọn tất cả câu trả lời đúng</p>
+      <input type="checkbox" id="answer1" name="answer" value="A">
+      <label for="answer1"> Chọn câu A</label><br>
+      <input type="checkbox" id="answer2" name="answer" value="B">
+      <label for="answer2"> Chọn câu B</label><br>
+      <input type="checkbox" id="answer3" name="answer" value="C">
+      <label for="answer3"> Chọn câu C</label><br><br>
+
+      <label for="_answer"><p>Chọn câu trả lời đúng:</p></label>
+      <select name="answer" id="answer">
+        <option value="a">Câu A</option>
+        <option value="b">Câu B</option>
+        <option value="c">Câu C</option>
+        <option value="d">Câu D</option>
+      </select>
+      <p class="select"></p>
+      <div>
+        <button type="submit" class="send">Gởi</button>
+        <button type="submit" class="cancle">Thoát</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
+
+<!-- form :
+textarea 
+input radio : jquery get value checkbox
+input checkbox
+select -->

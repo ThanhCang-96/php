@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- - goi thu js vao
+ + goi truc tiep tu trang chu
+ + down ve va goi vao nhu css -->
+<style type="text/css">
+  .demo {
+    background-color: red;
+  }
+  .blue{
+    background:blue;
+  }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  // 
+
+  // $("p").addClass("demo")
+  // $("p").removeClass("xxx")
+
+  // $("p").hide()
+  // $("p").show()
+  // if else for
+
+  // alert()
+  // console.log("hien thi thong bao duoi thanh console")
+
+  // hasClass(): kiem tra 1 class co ton tai trong the html k?
+  // co : tra ve ket qua true/false
+  // 
+
+  // $("button.add").click(function(){
+  //    $("p").addClass("demo")
+  //   // $("p").hide()
+  // })
+
+
+  //  $("button#remove").click(function(){
+  //   // $("p").removeClass("demo")
+  //   // $("p").show()
+
+  //   if($("p").hasClass("demo")){
+
+  //     $("p").removeClass("demo")
+
+  //   } else {
+
+  //     $("p").addClass("blue")
+  //   }
+  // })
+
+  // demo getItem from localStrorage
+  $("button.getItem").click(function(){
+    // var allItem = {
+    //   keys = Object.keys(localStorage)
+    // }
+    // n = keys.length;
+    // for(var i = 0;i < n; i++){
+    //   item[i] = localStorage.getItem(keys[i])
+    // }
+
+    // Object.keys(allItem).map(function(key,index){
+    //   console.log(allItem[key])
+    // })
+
+    // var getItem = localStorage.getItem("name")
+    // var array = localStorage.getItem("arr")
+    // console.log(getItem)
+    // console.log(array)
+
+    var allItem = []
+    keys = Object.keys(localStorage)
+    i = keys.length
+    while ( i-- ) {
+        allItem.push(JSON.parse(localStorage.getItem(keys[i])));
+        // allItem.push(localStorage.getItem(keys[i]));
+    }
+
+    allItem.forEach(function(item){
+      // console.log(value)
+      // JSON.parse(item)
+      console.log(item)
+      // Object.keys(item).map(function(key,index){
+      //   console.log(item[key])
+      // })
+      // console.log(typeof(item))
+    })
+    
+  })
+});
+</script>
+</head>
+<body>
+
+<p>This is a paragraph.</p>
+<button class="add">add</button>
+<button id="remove">remove</button>
+
+<button class="getItem">Get Item</button>
+</body>
+</html>

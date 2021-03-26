@@ -1,0 +1,31 @@
+table{
+  width: 400px;
+}
+table, th, td{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td{
+  padding: 5px 5px;
+  text-align: center;
+}
+
+label{
+  display: inline-block;
+  width: 80px;
+}
+.user{
+  margin: 10px 0px;
+}
+input[type=submit]{
+  display: inline-block;
+  margin: 10px 80px;
+  background: chartreuse;
+  width: 80px;
+  height: 25px;
+  border: none;
+  border-radius: 10px;
+}
+input[type=submit]:hover{
+  background: rgb(41, 161, 131);
+}

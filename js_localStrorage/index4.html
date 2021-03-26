@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var obj4 = []
+    keys = Object.keys(localStorage)
+    i = keys.length
+    while ( i-- ) {
+        obj4.push(JSON.parse(localStorage.getItem(keys[i])));
+    }
+    obj4.map(function(value,key){
+      console.log(value)
+      Object.keys(value).map(function(key,index){
+        // console.log(typeof(obj3[keys]))
+        console.log(value['username'])
+      })
+    })
+  </script>
+</body>
+</html>

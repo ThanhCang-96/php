@@ -1,0 +1,166 @@
+* {
+  /* reset all m and p to 0 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.wrap{
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 699px;
+  float: left;
+}
+.left{
+  width: 347px;
+  float: left;
+
+}
+.right{
+  width: 347px ;
+  float: left;
+}
+.title{
+  height: 70px;
+}
+img.a{
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+  float: left;
+}
+.content{
+  font-size: 12px;
+  display: block;
+  overflow: hidden;
+}
+span{
+  color: black;
+}
+a.abc {
+  font-size: 10px;
+  color: rgb(33, 34, 33);
+}
+.news{
+  font-size: 12px;
+  display: block;
+  overflow: hidden;
+  padding: 5px 0px;
+  line-height: 20px;
+}
+.news-top{
+  background: #eaf8d2;
+}
+.news-bottom{
+  background: #d5ecab;
+  font-weight: bold;
+}
+a{
+  text-decoration: none;
+  font-size: 12px;
+  color: black;
+}
+a:hover{
+  color: rgb(10, 192, 40);
+}
+ul.menu,ul.menu li{
+  display: inline-block;
+  list-style-type: none;
+  border: none;
+}
+.menu-left{
+  width: 347px;
+}
+.menu-left, .menu-right{
+  font-size: 10px;
+}
+.menu li{
+  border: none;
+  background: rgb(218, 224, 224);
+  border-radius: 4px;
+}
+
+/* hinh anh 3 */
+.tt3{
+  margin-top: 30px;
+}
+
+.tt3-left{
+  float: left;
+  margin-right: 10px;
+}
+
+.tt3-right{
+  height: 280px;
+}
+
+/* scroll */
+.scroll{
+  height: 50px;
+  overflow-y: scroll;
+}
+
+/* video chon loc */
+.tt4{
+  margin-left: 15px;
+  font-size: 20px;
+  color: rgb(8, 231, 109);
+}
+
+/* hr */
+hr{
+  height: 3px;
+  border: none;
+  background: rgb(8, 231, 109);
+  color: rgb(8, 231, 109);
+  margin-bottom: 10px;
+}
+
+/* tt5 video */
+.video{
+  width: 400px;
+  height: 225px;
+}
+
+/* tt5 */
+
+.tt5-t{
+  width: 400px;
+  float: left;
+  margin-right: 18px;
+}
+
+.tt5-p{
+  height: 300px;
+  overflow-y: scroll;
+}
+
+.scroll1{
+  overflow: hidden;
+  margin: 5px 0px;
+}
+ 
+.video1{
+  width: 130px;
+  float: left;
+}
+
+/* noi dung ben phai */
+.w-right{
+  width: 300px;
+  float: left;
+  margin: 10px 20px;
+}
+.bt{
+  overflow: hidden;
+  margin: 10px 0px;
+}
+.bt-img{
+  float: left;
+}
+table{
+  width: 100%;
+  background: lightgrey;
+}
+tr,th,td{
+  padding: 3px;
+}

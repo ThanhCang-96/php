@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Document</title>
+  <style>
+    *{
+      padding: 0px;
+      margin: 0px;
+    }
+    .x-img{
+      width: 400px;
+    }
+    .s.x-img{
+      width: 400px;
+    }
+    .img{
+      width: 100px;
+    }
+
+    /*  */
+    .hide {
+      display: none;
+    }
+    .show {
+      display: block;
+    }
+    
+    ul li {
+      display: inline-block;
+      margin: 0 10px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <!-- script -->
+  <script>
+    $(document).ready(function(){
+      $("img").click(function(){
+        var getSrc = $(this).attr("src")
+        $(".x-img").attr("src",getSrc)
+      })
+
+      $("li").click(function(){
+        var id = $(this).attr("id")
+        $("div.hide").hide()
+        $("div#"+id).show()
+      })
+
+      // form
+      $("button").click(function(){
+        var getName = $("input").val()
+        console.log(getName)
+      })
+    })
+
+  </script>
+
+  <!-- html -->
+  <div class="wrap">
+    <img class="x-img" src="../image/img1.jpg">
+    <div class="s-img">
+      <img class="img"  src="../image/img1.jpg" alt="">
+      <img class="img"  src="../image/img2.jpg" alt="">
+      <img class="img"  src="../image/img3.jpg" alt="">
+      <img class="img"  src="../image/img4.jpg" alt="">
+    </div>
+  </div>
+  <div class="demo">
+    <ul>
+      <li id="tt">tin tuc</li>
+      <li id="bd">bong da</li>
+      <li id="ttr">thoi trang</li>
+    </ul>
+
+    <div class="content">
+      <div id="tt" class="hide show">
+        tin tuc
+      </div>
+      <div id="bd" class="hide">
+        bong da
+      </div>
+      <div id="ttr" class="hide">
+        thoi trang
+      </div>
+    </div>
+  </div>
+  <form action="">
+    <p>name: <input type="text" name="user"></p>
+    <button>click</button>
+  </form>
+</body>
+</html>

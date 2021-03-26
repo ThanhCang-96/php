@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="../js_localStrorage/example.js"></script> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index 6</title>
+    <style>
+      table{
+        width: 300px;
+      }
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function(){
+        var obj = localStorage.getItem("objCha")
+        if(obj){
+          obj = JSON.parse(obj)
+          var html = ""
+          Object.keys(obj).map(function(keys,index){
+            console.log(obj[keys])
+            html += "<tr>" +
+                      "<td>" + obj[keys]['username'] + "</td>" +
+                      "<td>" + obj[keys]['email'] + " </td>" +
+                    "</tr>";
+                    console.log(obj[keys]['username'])
+                    console.log(obj[keys]['email'])
+          })
+          $("table tbody").append(html);
+        }
+      })
+    </script>
+    <table>
+      <thead>
+          <tr>
+            <th>name</th>
+            <th>email</th>
+          </tr>   
+      </thead>
+      
+      <tbody> 
+
+      </tbody>
+    </table>
+  </body>
+</html>
+
+<!-- tim hieu closets, next, prev 
+
+attr,
+text 
+find 
+val 
+this  -->

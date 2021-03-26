@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Closest-Next-Prev</title>
+  <style>
+    .a{
+      background-color: blue;
+    }
+    .b{
+      background-color: chartreuse;
+    }
+    .c{
+      background-color: darkmagenta;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    $(document).ready(function(){
+      $("button.closest").click(function(){
+        $("li.second").addClass("b")
+      })
+
+      $("li.third").click(function(){
+        $(this).closest("ul.second").find(".third1").addClass("b")
+      })
+
+      $("li.third").click(function(){
+        console.log($(this).closest("ul.second").find("input.third2").val())
+      })
+    })
+  </script>
+  <ul class="first">
+    <li class="first">
+      <ul class="second">
+        <li class="second1">
+          <ul class="third">
+            <li class="third">abcd1</li>
+            <li class="third">abcd2</li>
+            <li class="third">abcd3</li>
+          </ul>
+        </li>
+        <li class="second">
+          <ul class="third">
+            <li class="third1">abcd1</li>
+            <li class="third2">
+              <input class="third2" value="111">
+            </li>
+            <li class="third3"><img src="abc.png"></li>
+          </ul>
+        </li>
+        <li class="second">
+          <ul class="third">
+            <li class="third">abcd</li>
+            <li class="third">abcd</li>
+            <li class="third">abcd</li>
+          </ul>
+        </li>
+        <li class="second">
+          <ul class="third">
+            <li class="third">abcd</li>
+            <li class="third">abcd</li>
+            <li class="third">abcd</li>
+          </ul>
+        </li>
+        <li class="second">
+          <ul class="third">
+            <li class="third">abcd</li>
+            <li class="third">abcd</li>
+            <li class="third">abcd</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class="first">
+      <ul class="second">
+        <li class="second">
+          <ul class="third">
+            <li class="third">abcd</li>
+            <li class="third">abcd</li>
+            <li class="third">abcd</li>
+          </ul>
+        </li>
+        <li class="second">
+          <ul class="third">
+            <li class="third">abcd</li>
+            <li class="third">abcd</li>
+            <li class="third">abcd</li>
+          </ul>
+        </li>
+        <li class="second">
+          <ul class="third">
+            <li class="third">abcd</li>
+            <li class="third">abcd</li>
+            <li class="third">abcd</li>
+          </ul>
+        </li>
+        <li class="second">
+          <ul class="third">
+            <li class="third">abcd</li>
+            <li class="third">abcd</li>
+            <li class="third">abcd</li>
+          </ul>
+        </li>
+        <li class="second">
+          <ul class="third">
+            <li class="third">abcd</li>
+            <li class="third">abcd</li>
+            <li class="third">abcd</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <button class="closest">closest</button>
+  <button class="next">Next</button>
+  <button class="prev">Prev</button>
+</body>
+</html>
